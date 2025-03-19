@@ -31,9 +31,6 @@ const AboutUs = () => {
             various Google products.
           </p>
           
-          <button className="bg-blue-500 text-white font-medium py-2 px-6 rounded hover:bg-blue-600 transition-colors">
-            Visit the Safety Center
-          </button>
         </div>
         
         {/* Cards Section */}
