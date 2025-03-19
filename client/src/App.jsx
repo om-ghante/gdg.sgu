@@ -1,17 +1,27 @@
-import React from 'react'
-import './App.css'
+// App.jsx
+import React from 'react';
+import './App.css';
+
+
+import HeroSection from './components/HeroSection';
+import AboutUs from './components/AboutUs';
+import Footer from './components/Footer';
+import AboutSGU from './components/AboutSGU';
+import AboutGDG from './components/AboutGDG';
+import Events from './components/Events';
+
 
 function App() {
-
   return (
     <>
-      <h1
-        className='text-2xl text-center text-red-800 py-10'
-      >
-        Hello, World!
-      </h1>
+      <HeroSection />
+      <AboutUs />
+      <AboutSGU />
+      <AboutGDG />
+      <Events />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App; 
