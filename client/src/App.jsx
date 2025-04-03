@@ -29,7 +29,7 @@ function App() {
         </>} />
         
         {/* Prabal Event Route */}
-        <Route path="/Prabal" element={<Hero />} />
+        <Route path="/prabal" element={<Hero />} />
       </Routes>
     </Router>
   );
