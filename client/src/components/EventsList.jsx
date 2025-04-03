@@ -32,6 +32,14 @@ const EventsList = () => {
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti natus non animi modi accusamus. Deserunt molestiae perferendis assumenda libero veritatis, at exercitationem, quis repellat modi, consequuntur tempore aliquid error atque.",
             icon: GitAndGithub, // Placeholder for the Chrome icon
             ctaText: "Learn more"
+          },
+          {
+            id: 5,
+            href:"/prabal",
+            title: "`PRABAL` A National Level Hackthon (Upcomming)",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti natus non animi modi accusamus. Deserunt molestiae perferendis assumenda libero veritatis, at exercitationem, quis repellat modi, consequuntur tempore aliquid error atque.",
+            icon: GitAndGithub, // Placeholder for the Chrome icon
+            ctaText: "Learn more"
           }
       ];
     
@@ -65,7 +73,7 @@ const EventsList = () => {
                 </p>
                 
                 <a 
-                  href="#" 
+                  href={product.href} 
                   className="text-blue-500 hover:text-blue-700 text-sm mt-auto"
                 >
                   {product.ctaText}
