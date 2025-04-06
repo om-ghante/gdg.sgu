@@ -3,7 +3,7 @@ import { Calendar, ArrowUpRight } from 'lucide-react';
 import event1 from '../assets/GenAIWorkshop.png'
 import event2 from '../assets/BuildWithAI.png'
 import event3 from '../assets/GitAndGithub.png'
-import event4 from '../assets/Aiworkshop.jpg'
+import event4 from '../assets/AiWorkshop.jpg'
 import event5 from '../assets/Prabal.jpg'
 
 const EventCard = ({ event }) => {
