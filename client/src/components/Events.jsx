@@ -1,55 +1,50 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Calendar, ArrowUpRight } from 'lucide-react';
 
-const EventCard = ({ event, featured = false }) => {
+const EventCard = ({ event }) => {
+  const { title, description, icon, date, ctaText, featured, upcoming, href } = event;
+  
   return (
-    <div
-      className={`border border-gray-200 rounded-lg p-6 flex flex-col items-center transition-all duration-300 hover:shadow-lg ${featured ? 'md:col-span-2 bg-blue-50' : ''
-        }`}
-    >
-      <div className="bg-gray-50 w-32 h-32 flex items-center justify-center mb-6 rounded-full overflow-hidden">
-        <img
-          src={event.icon}
-          alt={`${event.title} icon`}
-          className="w-32 h-32 object-cover transition-transform duration-300 hover:scale-110"
+    <div className={`rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg ${featured ? 'border-2 border-blue-500 md:col-span-2 lg:col-span-1' : ''}`}>
+      <div className="relative">
+        <img 
+          src={icon} 
+          alt={title} 
+          className="w-full h-48 object-cover"
         />
+        {featured && (
+          <div className="absolute top-4 right-4 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
+            Featured
+          </div>
+        )}
+        {upcoming && (
+          <div className="absolute top-4 left-4 bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
+            Upcoming
+          </div>
+        )}
       </div>
-
-      {featured && <span className="px-3 py-1 bg-blue-500 text-white text-xs font-medium rounded-full mb-3">Featured Event</span>}
-
-      {event.upcoming && (
-        <span className="px-3 py-1 bg-green-500 text-white text-xs font-medium rounded-full mb-3">Upcoming</span>
-      )}
-
-      <h3 className="text-lg font-medium text-center mb-2">
-        {event.title}
-      </h3>
-
-      {event.date && (
-        <div className="flex items-center mb-3 text-gray-600">
-          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-          </svg>
-          <span className="text-xs">{event.date}</span>
+      
+      <div className="p-5">
+        <div className="flex items-center gap-2 text-gray-500 mb-3">
+          <Calendar size={16} />
+          <span className="text-sm">{date}</span>
         </div>
-      )}
-
-      <p className="text-gray-600 text-sm text-center mb-6">
-        {event.description}
-      </p>
-
-      <a
-        href={event.href || "#"}
-        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 text-sm font-medium mt-auto flex items-center"
-      >
-        {event.ctaText}
-        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-        </svg>
-      </a>
+        
+        <h3 className="text-xl font-bold mb-2">{title}</h3>
+        <p className="text-gray-600 mb-4 line-clamp-3">{description}</p>
+        
+        <a 
+          href={href || `#event-${event.id}`}
+          className="inline-flex items-center gap-1 text-blue-600 font-medium hover:text-blue-800 transition-colors"
+        >
+          {ctaText} <ArrowUpRight size={16} />
+        </a>
+      </div>
     </div>
   );
 };
 
+// Fixed EventsList Component
 const EventsList = () => {
   const events = [
     {
@@ -99,16 +94,32 @@ const EventsList = () => {
     }
   ];
 
+  // Separate featured events to ensure they display properly
+  const featuredEvents = events.filter(event => event.featured);
+  const regularEvents = events.filter(event => !event.featured);
+
   return (
-    <div className="max-w-7xl mx-auto py-12 px-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {events.map(event => (
-          <EventCard
-            key={event.id}
-            event={event}
-            featured={event.featured}
-          />
-        ))}
+    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6">
+      {/* Featured Events Section */}
+      {featuredEvents.length > 0 && (
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold mb-6">Featured Events</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {featuredEvents.map(event => (
+              <EventCard key={event.id} event={event} />
+            ))}
+          </div>
+        </div>
+      )}
+      
+      {/* Regular Events Section */}
+      <div>
+        <h2 className="text-2xl font-bold mb-6">Upcoming Events</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {regularEvents.map(event => (
+            <EventCard key={event.id} event={event} />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -228,14 +239,6 @@ const Events = () => {
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-6xl mx-auto px-4">
-        {/* Google Logo Section with Animation */}
-        <div
-          ref={logoSectionRef}
-          className="flex flex-wrap items-center justify-center max-w-4xl mx-auto mb-12 opacity-0 transform translate-y-8 transition-all duration-1000"
-        >
-          <GoogleLogo />
-        </div>
-
         {/* Header Section with Animation */}
         <div
           ref={headerRef}
@@ -244,6 +247,15 @@ const Events = () => {
           <span className="px-4 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-6 inline-block">
             Events & Activities
           </span>
+        {/* Google Logo Section with Animation */}
+        <div
+          ref={logoSectionRef}
+          className="flex flex-wrap items-center justify-center max-w-4xl mx-auto mb-12 opacity-0 transform translate-y-8 transition-all duration-1000"
+        >
+          <GoogleLogo />
+        </div>
+
+
 
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight mb-6">
             Developer Group <br />
