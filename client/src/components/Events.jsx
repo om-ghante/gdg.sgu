@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Calendar, ArrowUpRight } from 'lucide-react';
+import event1 from '../assets/GenAIWorkshop.png'
+import event2 from '../assets/BuildWithAI.png'
+import event3 from '../assets/GitAndGithub.png'
+import event4 from '../assets/AIworkshop.png'
+import event5 from '../assets/prabal.png'
 
 const EventCard = ({ event }) => {
   const { title, description, icon, date, ctaText, featured, upcoming, href } = event;
@@ -51,16 +56,15 @@ const EventsList = () => {
       id: 1,
       title: "Generative AI Workshop",
       description: "Learn the fundamentals of generative AI and create your first AI-powered application with hands-on exercises and expert guidance.",
-      icon: "/api/placeholder/400/400", // Placeholder for image
+      icon: {event1}, // Placeholder for image
       date: "March 15, 2025",
-      ctaText: "Learn more",
-      featured: true
+      ctaText: "Learn more"
     },
     {
       id: 2,
       title: "Build With AI Workshop",
       description: "Dive deep into practical AI implementation with this intensive workshop focusing on real-world applications and development techniques.",
-      icon: "/api/placeholder/400/400", // Placeholder for image
+      icon: {event2}, // Placeholder for image
       date: "March 28, 2025",
       ctaText: "View details"
     },
@@ -68,7 +72,7 @@ const EventsList = () => {
       id: 3,
       title: "Git and Github Workshop",
       description: "Master version control with Git and GitHub in this comprehensive workshop covering best practices and collaborative development workflows.",
-      icon: "/api/placeholder/400/400", // Placeholder for image
+      icon: {event3}, // Placeholder for image
       date: "April 10, 2025",
       ctaText: "Register now"
     },
@@ -79,7 +83,8 @@ const EventsList = () => {
       icon: "/api/placeholder/400/400", // Placeholder for image
       date: "April 25, 2025",
       ctaText: "Join waitlist",
-      upcoming: true
+      upcoming: true,
+      featured: true
     },
     {
       id: 5,
@@ -103,7 +108,7 @@ const EventsList = () => {
       {/* Featured Events Section */}
       {featuredEvents.length > 0 && (
         <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-6">Featured Events</h2>
+          <h2 className="text-2xl font-bold mb-6">Featured/Upcomming Events</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {featuredEvents.map(event => (
               <EventCard key={event.id} event={event} />
@@ -114,7 +119,7 @@ const EventsList = () => {
       
       {/* Regular Events Section */}
       <div>
-        <h2 className="text-2xl font-bold mb-6">Upcoming Events</h2>
+        <h2 className="text-2xl font-bold mb-6">Past Events</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {regularEvents.map(event => (
             <EventCard key={event.id} event={event} />
