@@ -3,8 +3,8 @@ import { Calendar, ArrowUpRight } from 'lucide-react';
 import event1 from '../assets/GenAIWorkshop.png'
 import event2 from '../assets/BuildWithAI.png'
 import event3 from '../assets/GitAndGithub.png'
-import event4 from '../assets/AIworkshop.png'
-import event5 from '../assets/prabal.png'
+import event4 from '../assets/Aiworkshop.jpg'
+import event5 from '../assets/Prabal.jpg'
 
 const EventCard = ({ event }) => {
   const { title, description, icon, date, ctaText, featured, upcoming, href } = event;
@@ -56,7 +56,7 @@ const EventsList = () => {
       id: 1,
       title: "Generative AI Workshop",
       description: "Learn the fundamentals of generative AI and create your first AI-powered application with hands-on exercises and expert guidance.",
-      icon: {event1}, // Placeholder for image
+      icon: event1, // Placeholder for image
       date: "March 15, 2025",
       ctaText: "Learn more"
     },
@@ -64,23 +64,23 @@ const EventsList = () => {
       id: 2,
       title: "Build With AI Workshop",
       description: "Dive deep into practical AI implementation with this intensive workshop focusing on real-world applications and development techniques.",
-      icon: {event2}, // Placeholder for image
+      icon: event2, // Placeholder for image
       date: "March 28, 2025",
-      ctaText: "View details"
+      ctaText: "Learn more"
     },
     {
       id: 3,
       title: "Git and Github Workshop",
       description: "Master version control with Git and GitHub in this comprehensive workshop covering best practices and collaborative development workflows.",
-      icon: {event3}, // Placeholder for image
+      icon: event3, // Placeholder for image
       date: "April 10, 2025",
-      ctaText: "Register now"
+      ctaText: "Learn more"
     },
     {
       id: 4,
       title: "Advanced AI Techniques",
       description: "Explore cutting-edge AI methodologies and applications in this advanced workshop designed for developers looking to push the boundaries.",
-      icon: "/api/placeholder/400/400", // Placeholder for image
+      icon: event4, // Placeholder for image
       date: "April 25, 2025",
       ctaText: "Join waitlist",
       upcoming: true,
@@ -91,9 +91,9 @@ const EventsList = () => {
       href: "/prabal",
       title: "PRABAL: National Level Hackathon",
       description: "Join India's premier collegiate hackathon focusing on AI-powered solutions for sustainable development and social impact initiatives.",
-      icon: "/api/placeholder/400/400", // Placeholder for image
+      icon: event5, // Placeholder for image
       date: "May 15-17, 2025",
-      ctaText: "Apply now",
+      ctaText: "Register now",
       upcoming: true,
       featured: true
     }
