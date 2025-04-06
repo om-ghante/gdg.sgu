@@ -87,7 +87,7 @@ const Sponsors = () => {
     <div className="bg-black text-white">
       {/* Sponsors Section */}
       <section 
-        id="sponsors-section" 
+        id="sponsors" 
         className="py-20 px-4 sm:px-6 lg:px-8 relative"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url(${sponsorsBg})`,
@@ -129,7 +129,7 @@ const Sponsors = () => {
       
       {/* Collaborators Section */}
       <section 
-        id="collaborators-section" 
+        id="collaborators" 
         className="py-20 px-4 sm:px-6 lg:px-8 relative"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url(${sponsorsBg})`,
