@@ -76,7 +76,7 @@ const PrabalFAQ = () => {
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="mb-4 backdrop-blur-sm rounded-lg border border-gray-700 overflow-hidden transition-all duration-300"
+              className="mb-4 backdrop-blur-sm rounded-lg border border-blue-400 overflow-hidden transition-all duration-300"
             >
               <button
                 className="w-full px-6 py-4 text-left flex justify-between items-center"
