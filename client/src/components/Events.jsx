@@ -81,7 +81,7 @@ const EventsList = () => {
       title: "Advanced AI Techniques",
       description: "Explore cutting-edge AI methodologies and applications in this advanced workshop designed for developers looking to push the boundaries.",
       icon: event4, // Placeholder for image
-      date: "April 25, 2025",
+      date: "Cooming Soon",
       ctaText: "Join waitlist",
       upcoming: true,
       featured: true
@@ -92,7 +92,7 @@ const EventsList = () => {
       title: "PRABAL: National Level Hackathon",
       description: "Join India's premier collegiate hackathon focusing on AI-powered solutions for sustainable development and social impact initiatives.",
       icon: event5, // Placeholder for image
-      date: "May 15-17, 2025",
+      date: "April 18-20, 2025",
       ctaText: "Register now",
       upcoming: true,
       featured: true
