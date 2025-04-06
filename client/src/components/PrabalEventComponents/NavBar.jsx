@@ -21,8 +21,8 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
               <a href="#aboutprabal" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">About Prabal</a>
-              <a href="#sponsors" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">Sponsors</a>
-              <a href="#collaborators" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">Collaborators</a>
+              <a href="#sponsors-section" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">Sponsors</a>
+              <a href="#collaborators-section" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">Collaborators</a>
               <a href="#team" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">Team</a>
             </div>
           </div>
@@ -55,8 +55,8 @@ const Navbar = () => {
         <div className="md:hidden bg-black bg-opacity-90">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a href="#aboutprabal" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">About Prabal</a>
-              <a href="#sponsors" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">Sponsors</a>
-              <a href="#collaborators" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">Collaborators</a>
+              <a href="#sponsors-section" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">Sponsors</a>
+              <a href="#collaborators-section" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">Collaborators</a>
               <a href="#team" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-medium">Team</a>
           </div>
         </div>
