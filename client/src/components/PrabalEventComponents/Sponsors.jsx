@@ -5,20 +5,20 @@ import unstopLogo from '../../assets/logos/unstop.jpg';
 import sponsor1 from '../../assets/logos/StarAirLogo.png';
 import sponsor2 from '../../assets/logos/GhodawatConsumer.png';
 import sponsor3 from '../../assets/logos/Finlatics.png';
-import sponsor4 from '../../assets/logos/gdgsgulogo.jpg';
 import sponsor5 from '../../assets/logos/interviewbuddy.png';
 import sponsor6 from '../../assets/logos/balsamiq.png';
 import sponsor7 from '../../assets/logos/blackboxai.jpeg';
 // Add your pre-incubation sponsors
-import incubationSponsor1 from '../../assets/logos/gdgsgulogo.jpg';
+import incubationSponsor1 from '../../assets/logos/NextIn.jpg';
 import incubationSponsor2 from '../../assets/logos/Prismas.svg';
-import incubationSponsor3 from '../../assets/logos/gdgsgulogo.jpg';
+import incubationSponsor3 from '../../assets/logos/PitamabareGuruji.jpg';
+import incubationSponsor4 from '../../assets/logos/introoplus.jpg';
+import incubationSponsor5 from '../../assets/logos/yuktiyantra.jpg';
 
-import megaCollaborator1 from '../../assets/logos/gdgsgulogo.jpg'; 
-import megaCollaborator2 from '../../assets/logos/gdgsgulogo.jpg';
-import collaborator1 from '../../assets/logos/gdgsgulogo.jpg';
-import collaborator2 from '../../assets/logos/gdgsgulogo.jpg';
-import collaborator3 from '../../assets/logos/gdgsgulogo.jpg';
+import megaCollaborator1 from '../../assets/logos/gdgpune.png'; 
+import megaCollaborator2 from '../../assets/logos/gdgaurangabad.png';
+import collaborator1 from '../../assets/logos/gdgAmity.png';
+import collaborator2 from '../../assets/logos/gdgwces.png';
 
 import sponsorsBg from '../../assets/Backgroundimg1.jpg';
 
@@ -78,11 +78,12 @@ const Sponsors = () => {
     incubationSponsors: [
       { name: "Incubation Sponsor 1", logo: incubationSponsor1 },
       { name: "Incubation Sponsor 2", logo: incubationSponsor2 },
-      { name: "Incubation Sponsor 3", logo: incubationSponsor3 }
+      { name: "Incubation Sponsor 3", logo: incubationSponsor3 },
+      { name: "Incubation Sponsor 4", logo: incubationSponsor4 },
+      { name: "Incubation Sponsor 5", logo: incubationSponsor5 }
     ],
     otherSponsors: [
       { name: "Sponsor 3", logo: sponsor3 },
-      { name: "Sponsor 4", logo: sponsor4 },
       { name: "Sponsor 5", logo: sponsor5 },
       { name: "Sponsor 6", logo: sponsor6 },
       { name: "Sponsor 7", logo: sponsor7 }
@@ -98,8 +99,6 @@ const Sponsors = () => {
     otherCollaborators: [
       { name: "Collaborator 1", logo: collaborator1 },
       { name: "Collaborator 2", logo: collaborator2 },
-      { name: "Collaborator 3", logo: collaborator3 },
-      { name: "GDG", logo: gdgLogo }
     ]
   };
 
@@ -267,11 +266,11 @@ const Sponsors = () => {
           {/* Other Collaborators */}
           <div>
             <h3 className="text-2xl font-semibold text-center mb-8 text-blue-300">Other Collaborators</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
               {collaborators.otherCollaborators.map((collaborator, index) => (
                 <div 
                   key={collaborator.name}
-                  className={`rounded-lg p-5 flex items-center justify-center h-32 sm:h-36 transform transition-all hover:scale-105 bg-black bg-opacity-50 border border-blue-400 ${isVisible.collaborators ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                  className={`rounded-lg p-5 flex items-center justify-center h-48 sm:h-56 transform transition-all hover:scale-105 bg-black bg-opacity-50 border border-blue-400 ${isVisible.collaborators ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                   style={{ 
                     transitionDelay: `${index * 150 + 300}ms`, 
                     transitionDuration: '800ms',
